@@ -1,0 +1,578 @@
+
+{% extends "base.html" %}
+
+{% block title %}Yugendar | Python & AI Developer{% endblock %}
+
+{% block content %}
+
+
+<section class="hero section" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <div class="availability">
+                <span class="availability-dot"></span>
+                Open to opportunities
+            </div>
+
+            <p class="intro-label">
+                PYTHON DEVELOPER · AI ENTHUSIAST
+            </p>
+
+            <h1>
+                Building things<br>
+                <span>with code.</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Hey, I'm <strong>Gadicherla Yugendar</strong> —
+                a Computer Science graduate passionate about
+                backend development, Python, AI and creating
+                applications that solve real problems.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    Explore My Work
+                    <span>↗</span>
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Let's Connect
+                </a>
+
+            </div>
+
+            <div class="hero-socials">
+
+                <a href="{{ github_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub ↗
+                </a>
+
+                <a href="{{ linkedin_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn ↗
+                </a>
+
+                <a href="mailto:{{ email }}">
+                    Email ↗
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image-wrapper">
+
+            <div class="image-decoration"></div>
+
+            <div class="hero-image">
+
+                <img
+                    src="{{ url_for('static', path='images/profile.jpg') }}"
+                    alt="Gadicherla Yugendar"
+                >
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+        <span></span>
+        Scroll to explore
+    </div>
+
+</section>
+
+
+
+<section class="section about-section" id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                01 — ABOUT ME
+            </p>
+
+            <h2>
+                A little about<br>
+                <span>who I am.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div class="about-main">
+
+                <p class="about-highlight">
+
+                    I'm a Computer Science graduate who enjoys
+                    turning ideas into practical applications
+                    through code.
+
+                </p>
+
+                <p>
+
+                    I graduated with a B.Tech in Computer Science
+                    and Engineering from Indur Institute of
+                    Engineering and Technology, Siddipet.
+
+                </p>
+
+                <p>
+
+                    My primary focus is Python development,
+                    backend technologies, APIs, databases and
+                    exploring the possibilities of machine learning.
+
+                </p>
+
+                <p>
+
+                    I enjoy learning new technologies,
+                    experimenting with ideas and building projects
+                    that help me grow as a developer.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-details">
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        EDUCATION
+                    </span>
+
+                    <h3>B.Tech Computer Science</h3>
+
+                    <p>
+                        Indur Institute of Engineering
+                        and Technology
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        CURRENT FOCUS
+                    </span>
+
+                    <h3>Backend & AI Development</h3>
+
+                    <p>
+                        Python · FastAPI · Machine Learning
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        LOCATION
+                    </span>
+
+                    <h3>India</h3>
+
+                    <p>
+                        Available for opportunities
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="section skills-section" id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                02 — TECH STACK
+            </p>
+
+            <h2>
+                Technologies I<br>
+                <span>work with.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            {% for category, skill_list in skills.items() %}
+
+            <div class="skill-category">
+
+                <div class="skill-category-header">
+
+                    <span class="skill-number">
+                        0{{ loop.index }}
+                    </span>
+
+                    <h3>{{ category }}</h3>
+
+                </div>
+
+
+                <div class="skill-list">
+
+                    {% for skill in skill_list %}
+
+                    <span class="skill-item">
+                        {{ skill }}
+                    </span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="section projects-section" id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                03 — SELECTED WORK
+            </p>
+
+            <h2>
+                Things I've<br>
+                <span>built.</span>
+            </h2>
+
+            <p class="heading-description">
+
+                A collection of projects where I explore
+                technologies, solve problems and turn ideas
+                into working applications.
+
+            </p>
+
+        </div>
+
+
+        <div class="projects-container">
+
+            {% for project in projects %}
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-number">
+                        {{ project.number }}
+                    </span>
+
+                    <span class="project-category">
+                        {{ project.category }}
+                    </span>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+                    <p class="project-description">
+                        {{ project.description }}
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        {% for tech in project.technologies %}
+
+                        <span>
+                            {{ tech }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        {% if project.github != "#" %}
+
+                        <a href="{{ project.github }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+
+                            View Repository
+                            <span>↗</span>
+
+                        </a>
+
+                        {% else %}
+
+                        <span class="project-link-disabled">
+                            Repository link coming soon
+                        </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="section contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                04 — GET IN TOUCH
+            </p>
+
+            <h2>
+                Let's build something<br>
+                <span>meaningful.</span>
+            </h2>
+
+            <p class="heading-description">
+
+                I'm open to opportunities, collaborations
+                and conversations about Python, backend
+                development and AI.
+
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+
+            <div class="contact-info">
+
+                <h3>Get in touch.</h3>
+
+                <p>
+                    Have an opportunity, idea or project?
+                    I'd be happy to hear from you.
+                </p>
+
+
+                <a href="mailto:{{ email }}"
+                   class="contact-item">
+
+                    <span class="contact-icon">
+                        ↗
+                    </span>
+
+                    <div>
+
+                        <span class="contact-label">
+                            EMAIL
+                        </span>
+
+                        <span class="contact-value">
+                            {{ email }}
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <a href="{{ github_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-item">
+
+                    <span class="contact-icon">
+                        ↗
+                    </span>
+
+                    <div>
+
+                        <span class="contact-label">
+                            GITHUB
+                        </span>
+
+                        <span class="contact-value">
+                            github.com/yugendar123
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <a href="{{ linkedin_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-item">
+
+                    <span class="contact-icon">
+                        ↗
+                    </span>
+
+                    <div>
+
+                        <span class="contact-label">
+                            LINKEDIN
+                        </span>
+
+                        <span class="contact-value">
+                             www.linkedin.com/in/gadicherla-yugendar
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form-wrapper">
+
+                <h3>Send a message</h3>
+
+                <form action="/contact"
+                      method="POST"
+                      class="contact-form">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell me about your idea..."
+                            rows="5"
+                            maxlength="2000"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn primary-btn form-submit">
+
+                        Send Message
+                        <span>↗</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
