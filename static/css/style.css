@@ -422,7 +422,6 @@ img {
 }
 
 
-/* HERO SOCIAL LINKS */
 
 .hero-socials {
     display: flex;
@@ -447,7 +446,6 @@ img {
 }
 
 
-/* HERO IMAGE */
 
 .hero-image-wrapper {
     position: relative;
@@ -552,9 +550,7 @@ img {
 }
 
 
-/* =========================================
-   ABOUT
-========================================= */
+
 
 .about-section {
     border-top: 1px solid var(--border);
@@ -632,10 +628,6 @@ img {
     color: var(--muted);
 }
 
-
-/* =========================================
-   SKILLS
-========================================= */
 
 .skills-section {
     background: var(--bg-secondary);
@@ -884,9 +876,7 @@ img {
 }
 
 
-/* =========================================
-   CONTACT
-========================================= */
+
 
 .contact-section {
     background: var(--bg-secondary);
@@ -980,7 +970,6 @@ img {
 }
 
 
-/* CONTACT FORM */
 
 .contact-form-wrapper {
     padding: 35px;

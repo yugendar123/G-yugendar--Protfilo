@@ -1,14 +1,12 @@
-
-from datetime import datetime
-
 from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
+from datetime import datetime
+
 
 app = FastAPI(title="Yugendar Portfolio")
 
-# Static files
 app.mount(
     "/static",
     StaticFiles(directory="static"),
@@ -18,7 +16,6 @@ app.mount(
 templates = Jinja2Templates(directory="templates")
 
 
-# Personal information
 name = "Gadicherla Yugendar"
 email = "yugendargadicherla566@gmail.com"
 
@@ -30,7 +27,6 @@ linkedin_url = (
 )
 
 
-# Skills
 skills = {
     "Programming": ["Python", "OOP", "SQL"],
     "Backend Development": ["FastAPI", "Flask", "REST APIs"],
@@ -41,7 +37,6 @@ skills = {
 }
 
 
-# Projects
 projects = [
     {
         "number": "01",
@@ -95,7 +90,6 @@ projects = [
 ]
 
 
-# HOME PAGE
 @app.get("/")
 async def home(request: Request):
 
@@ -151,7 +145,7 @@ async def contact(
     message: str = Form(...)
 ):
 
-    #
+    
 
     response = RedirectResponse(
         url="/?contact=success#contact",
